@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ghost Job Detector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="icons/icon48.png" alt="ghost" />
+      <h1>Ghost Job Detector</h1>
+    </header>
+
+    <div class="modes">
+      <button id="fastScanBtn" class="mode active">Fast Scan</button>
+      <button id="deepScanBtn" class="mode">Deep Scan</button>
+      <button id="patternScanBtn" class="mode">Pattern Scan</button>
+    </div>
+
+    <section class="inputs">
+      <div class="auto-scan">
+        <button id="scanPageBtn">Scan Current Page</button>
+        <small class="hint">Best-effort extraction from LinkedIn, Indeed, Glassdoor, or company pages.</small>
+      </div>
+
+      <label for="jdInput">Paste job description (Deep Scan):</label>
+      <textarea id="jdInput" placeholder="Paste full job description here..."></textarea>
+
+      <div class="row">
+        <input id="companyInput" placeholder="Company (optional)" />
+        <input id="titleInput" placeholder="Job title (optional)" />
+      </div>
+
+      <div class="actions">
+        <button id="runBtn">Run Scan</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div id="summary" class="summary"></div>
+      <div id="score" class="score"></div>
+      <div id="breakdown" class="breakdown"></div>
+      <div id="recommendation" class="recommendation"></div>
+      <div id="outreach" class="outreach"></div>
+    </section>
+
+    <footer>
+      <small>Scoring: Layer1 (40) • Layer2 (35) • Layer3 (25). Ghost% = 100 − total.</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
